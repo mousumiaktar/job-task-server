@@ -27,6 +27,14 @@ async function run(){
         });
 
 
+        app.post('/user', async (req, res) =>{
+            const newUser = req.body;
+            console.log(newUser);
+            const result = await userCollection.insertOne(newUser);
+            res.send(result);
+        })
+
+
 
     }
     finally{
